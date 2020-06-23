@@ -1,9 +1,9 @@
 
 # Provider
  provider "aws" {
-   access_key = ""
-   secret_key = ""
-   region = ""
+   access_key = "AKIAWQCTDUSZZOPF4AND"
+   secret_key = "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"
+   region = "var.region"
  }
 
 # Retrieve the AZ where we want to create network resources
@@ -12,6 +12,7 @@ data "aws_availability_zones" "available" {}
 # VPC Resource
 resource "aws_vpc" "main" {
   cidr_block = "10.11.0.0/16"
+  region = "var.region"
   enable_dns_support = true
   enable_dns_hostnames = true
   tags {
